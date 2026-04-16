@@ -1,4 +1,4 @@
-// ⚠️ Sustituye TU_API_KEY_AQUI por tu clave real de OpenWeather
+// ⚠️ Sustitucion de _API_
 const apiKey = "05a36bce854ad8be615f1983f1041283";
 
 // Mapeo de condiciones a íconos de Weather Icons
