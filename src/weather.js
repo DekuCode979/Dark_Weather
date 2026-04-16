@@ -1,3 +1,6 @@
+// ⚠️ Sustituye TU_API_KEY_AQUI por tu clave real de OpenWeather
+const apiKey = "05a36bce854ad8be615f1983f1041283";
+
 // Mapeo de condiciones a íconos de Weather Icons
 const iconMap = {
   Clear: "wi wi-day-sunny",
@@ -13,9 +16,6 @@ const iconMap = {
 
 // Función para obtener el clima actual
 export async function getWeather(city) {
-  const apiKey = import.meta.env.VITE_API_KEY;
-  if (!apiKey) throw new Error("API Key no configurada");
-
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=es`;
 
   try {
@@ -44,9 +44,6 @@ export async function getWeather(city) {
 
 // Función para obtener pronóstico extendido
 export async function getForecast(city) {
-  const apiKey = import.meta.env.VITE_API_KEY;
-  if (!apiKey) throw new Error("API Key no configurada");
-
   const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric&lang=es`;
 
   try {
@@ -79,9 +76,6 @@ export async function getForecast(city) {
 
 // Función para obtener sugerencias de ciudades (autocompletado dinámico)
 export async function getCitySuggestions(query) {
-  const apiKey = import.meta.env.VITE_API_KEY;
-  if (!apiKey) throw new Error("API Key no configurada");
-
   const url = `https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=${apiKey}`;
 
   try {
