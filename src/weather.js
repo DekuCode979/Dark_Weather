@@ -1,4 +1,4 @@
-// ⚠️ Sustitucion de _API_
+// ⚠️ Sustituye TU_API_KEY_AQUI por tu clave real de OpenWeather
 const apiKey = "05a36bce854ad8be615f1983f1041283";
 
 // Mapeo de condiciones a íconos de Weather Icons
@@ -60,10 +60,21 @@ export async function getForecast(city) {
       const condition = item.weather[0].main;
       const iconClass = iconMap[condition] || "wi wi-na";
 
+      // Formatear fecha correctamente
+      const fecha = new Date(item.dt_txt);
+      const opciones = { 
+        weekday: 'short', 
+        day: 'numeric', 
+        month: 'short', 
+        hour: '2-digit', 
+        minute: '2-digit' 
+      };
+      const fechaFormateada = fecha.toLocaleDateString('es-ES', opciones);
+
       const card = document.createElement('div');
       card.className = 'forecast-card col';
       card.innerHTML = `
-        <h6>${new Date(item.dt_txt).toLocaleDateString('es-ES', { weekday: 'short', hour: '2-digit' })}</h6>
+        <h6>${fechaFormateada}</h6>
         <i class="${iconClass} weather-icon"></i>
         <p>${item.main.temp} °C</p>
       `;
