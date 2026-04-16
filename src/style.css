@@ -1,0 +1,168 @@
+body {
+  background: linear-gradient(135deg, #0a0a0f, #1c1c29);
+  font-family: 'Segoe UI', sans-serif;
+  color: #e0e0e0;
+  min-height: 100vh;
+}
+
+/* Título con efecto neón */
+.title {
+  color: #7df9ff;
+  text-shadow: 0 0 15px #7df9ff, 0 0 30px #7df9ff;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Barra de búsqueda */
+.input-group {
+  background-color: #1a1a26;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(106, 0, 255, 0.6);
+}
+
+input.form-control {
+  background-color: #1a1a26;
+  color: #fff;
+  border: none;
+}
+
+input.form-control::placeholder {
+  color: #aaa;
+}
+
+input.form-control:focus {
+  box-shadow: 0 0 15px #6a00ff;
+}
+
+/* Botón moderno */
+.btn-gradient {
+  background: linear-gradient(90deg, #0077ff, #6a00ff);
+  color: #fff;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-gradient:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Tarjeta del clima */
+.card-dark {
+  background-color: #12121a;
+  border: 1px solid #0077ff;
+  box-shadow: 0 0 20px rgba(0, 119, 255, 0.6);
+  transition: 0.4s ease-in-out;
+}
+
+.card-dark.show {
+  transform: scale(1.02);
+}
+
+/* Ícono del clima (Weather Icons) */
+.weather-icon {
+  font-size: 4rem;
+  color: #7df9ff;
+  text-shadow: 0 0 15px #0077ff;
+  margin: 10px 0;
+}
+
+/* Pronóstico */
+.forecast-card {
+  background: #1a1a26;
+  border: 1px solid #6a00ff;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  margin: 5px;
+  flex: 1;
+}
+
+/* Textos del clima */
+#cityName {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #7df9ff;
+  text-transform: capitalize;
+}
+
+#description {
+  font-size: 1.2rem;
+  color: #e0e0e0;
+  text-transform: capitalize;
+}
+
+#temperature,
+#humidity {
+  font-size: 1.1rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* Sugerencias de autocompletado */
+#suggestions {
+  max-height: 220px;
+  overflow-y: auto;
+  z-index: 1000;
+  background-color: #1a1a26;
+  border: 1px solid #6a00ff;
+  border-radius: 6px;
+  margin-top: 5px; /* separación del input */
+}
+
+#suggestions li {
+  cursor: pointer;
+  color: #e0e0e0;
+  padding: 8px 12px;
+  text-transform: capitalize;
+}
+
+#suggestions li:hover {
+  background-color: #0077ff;
+  color: #fff;
+}
+
+/* Historial de ciudades */
+#history {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+#history button {
+  background-color: #1a1a26;
+  border: 1px solid #0077ff;
+  color: #7df9ff;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+#history button:hover {
+  background-color: #0077ff;
+  color: #fff;
+}
+
+/* Responsividad en móvil */
+@media (max-width: 576px) {
+  .btn-gradient {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .input-group {
+    flex-direction: column;
+  }
+  .title {
+    font-size: 1.6rem;
+  }
+  #cityName {
+    font-size: 1.4rem;
+  }
+  #description,
+  #temperature,
+  #humidity {
+    font-size: 1rem;
+  }
+}
