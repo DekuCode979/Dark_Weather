@@ -101,22 +101,26 @@ input.form-control:focus {
   font-weight: 500;
 }
 
-/* Sugerencias de autocompletado */
+/* Lista de sugerencias */
 #suggestions {
-  max-height: 220px;
+  position: absolute;       /* se posiciona respecto al input-group */
+  top: 110%; 
+  left: 0;
+  right: 0;
+  margin-top: 12px;         /* separación adicional */
+  max-height: 250px;
   overflow-y: auto;
-  z-index: 1000;
+  z-index: 2000;
   background-color: #1a1a26;
   border: 1px solid #6a00ff;
   border-radius: 6px;
-  margin-top: 10px; /* separación del input */
-  padding-top: 5px;
+  padding: 6px 0;
 }
 
 #suggestions li {
   cursor: pointer;
   color: #e0e0e0;
-  padding: 8px 12px;
+  padding: 12px 16px;       /* más espacio entre texto y borde */
   text-transform: capitalize;
 }
 
@@ -124,6 +128,7 @@ input.form-control:focus {
   background-color: #0077ff;
   color: #fff;
 }
+
 
 /* Historial de ciudades */
 #history {
