@@ -109,7 +109,8 @@ input.form-control:focus {
   background-color: #1a1a26;
   border: 1px solid #6a00ff;
   border-radius: 6px;
-  margin-top: 5px; /* separación del input */
+  margin-top: 10px; /* separación del input */
+  padding-top: 5px;
 }
 
 #suggestions li {
