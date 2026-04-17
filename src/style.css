@@ -17,14 +17,13 @@ body {
 }
 
 /* --- CONTENEDOR DE BÚSQUEDA --- */
-/* Cambiamos overflow a visible para que las sugerencias no se corten */
 .input-group {
   background-color: #1a1a26;
-  border-radius: 12px !important; 
-  overflow: visible !important;   /* CRÍTICO: Permite ver las sugerencias */
+  border-radius: 12px !important;
+  overflow: visible !important;
   box-shadow: 0 0 20px rgba(106, 0, 255, 0.4);
   border: 1px solid #6a00ff;
-  display: flex; 
+  display: flex;
 }
 
 input.form-control {
@@ -35,7 +34,7 @@ input.form-control {
 }
 
 input.form-control:focus {
-  box-shadow: none; /* Quitamos el brillo por defecto de Bootstrap */
+  box-shadow: none;
 }
 
 .btn-gradient {
@@ -53,16 +52,16 @@ input.form-control:focus {
   transform: scale(1.02);
 }
 
-/* --- LISTA DE SUGERENCIAS (FLOTANTE) --- */
+/* --- LISTA DE SUGERENCIAS --- */
 #suggestions {
   position: absolute;
-  top: 100%; /* Pegado justo debajo del input */
+  top: 100%;
   left: 0;
   right: 0;
   margin-top: 8px;
   max-height: 280px;
   overflow-y: auto;
-  z-index: 9999; /* Por encima de todo */
+  z-index: 9999;
   background-color: #1a1a26;
   border: 1px solid #0077ff;
   border-radius: 12px;
@@ -71,7 +70,6 @@ input.form-control:focus {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
 }
 
-/* Estilo para cada item de la lista */
 #suggestions li {
   cursor: pointer;
   color: #e0e0e0;
@@ -90,10 +88,9 @@ input.form-control:focus {
 #suggestions li:hover {
   background-color: #0077ff;
   color: #fff;
-  padding-left: 25px; /* Efecto sutil de movimiento */
+  padding-left: 25px;
 }
 
-/* Scrollbar personalizado para la lista */
 #suggestions::-webkit-scrollbar {
   width: 6px;
 }
@@ -111,12 +108,6 @@ input.form-control:focus {
   box-shadow: 0 0 30px rgba(0, 119, 255, 0.3);
 }
 
-.weather-icon {
-  font-size: 5rem;
-  color: #7df9ff;
-  filter: drop-shadow(0 0 10px #0077ff);
-}
-
 .forecast-card {
   background: rgba(26, 26, 38, 0.6);
   border: 1px solid rgba(106, 0, 255, 0.3);
@@ -131,7 +122,6 @@ input.form-control:focus {
   border-color: #6a00ff;
 }
 
-/* Evitar que el texto se desborde en el pronóstico */
 .forecast-card p {
   white-space: nowrap;
   overflow: hidden;
@@ -167,10 +157,44 @@ input.form-control:focus {
   box-shadow: 0 0 10px #0077ff;
 }
 
+/* --- TEXTOS DE LA TARJETA PRINCIPAL --- */
+#description {
+  font-size: 1.4rem;
+  color: #ffffff !important;
+  text-transform: capitalize;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#temperature, #humidity {
+  font-size: 1.2rem;
+  color: #7df9ff !important;
+  margin: 10px 0;
+  font-weight: 500;
+}
+
+.weather-icon {
+  font-size: 5.5rem;
+  color: #7df9ff;
+  display: block;
+  margin: 25px auto;
+  filter: drop-shadow(0 0 15px rgba(125, 249, 255, 0.5));
+}
+
+.card-dark .card-body {
+  padding: 40px 20px !important;
+}
+
+#cityName {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  margin-bottom: 15px;
+}
+
 /* --- RESPONSIVIDAD --- */
 @media (max-width: 576px) {
   .input-group {
-    flex-wrap: nowrap; 
+    flex-wrap: nowrap;
   }
   
   .btn-gradient {
@@ -182,11 +206,11 @@ input.form-control:focus {
   }
 
   #suggestions li {
-    padding: 16px; 
+    padding: 16px;
   }
 
   #suggestions {
-    position: fixed; 
+    position: fixed;
     left: 15px;
     right: 15px;
     top: auto;
