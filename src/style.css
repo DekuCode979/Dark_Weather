@@ -20,10 +20,11 @@ body {
 /* Cambiamos overflow a visible para que las sugerencias no se corten */
 .input-group {
   background-color: #1a1a26;
-  border-radius: 12px !important; /* Bordes más suaves */
+  border-radius: 12px !important; 
   overflow: visible !important;   /* CRÍTICO: Permite ver las sugerencias */
   box-shadow: 0 0 20px rgba(106, 0, 255, 0.4);
   border: 1px solid #6a00ff;
+  display: flex; 
 }
 
 input.form-control {
@@ -130,10 +131,46 @@ input.form-control:focus {
   border-color: #6a00ff;
 }
 
+/* Evitar que el texto se desborde en el pronóstico */
+.forecast-card p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Animación de entrada para la tarjeta de clima */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card-dark.show {
+  display: block !important;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* --- HISTORIAL DE CIUDADES --- */
+#history button {
+  background: rgba(0, 119, 255, 0.1);
+  border: 1px solid #0077ff;
+  color: #7df9ff;
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-size: 0.85rem;
+  transition: 0.3s;
+  text-transform: capitalize;
+}
+
+#history button:hover {
+  background: #0077ff;
+  color: white;
+  box-shadow: 0 0 10px #0077ff;
+}
+
 /* --- RESPONSIVIDAD --- */
 @media (max-width: 576px) {
   .input-group {
-    flex-wrap: nowrap; /* Mantiene el botón al lado del input en móviles */
+    flex-wrap: nowrap; 
   }
   
   .btn-gradient {
@@ -145,6 +182,14 @@ input.form-control:focus {
   }
 
   #suggestions li {
-    padding: 16px; /* Más grande para dedos en pantallas táctiles */
+    padding: 16px; 
+  }
+
+  #suggestions {
+    position: fixed; 
+    left: 15px;
+    right: 15px;
+    top: auto;
+    width: auto;
   }
 }
